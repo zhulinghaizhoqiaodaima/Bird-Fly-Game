@@ -15,7 +15,7 @@ class Bird extends Rectangle {
         super(BirdWidth,BirdHeight,BirdLeft,BirdTop,0,0,BirdDmo);
         this.g = 1500;// 单位: px/s  
         this.maxY = gameHeight - LandHeight - this.height;
-        this.SwingStatus = 1; //翅膀状态
+        this.SwingStatus = 0; //翅膀状态
         this.timer = null;
         this.render();
     }
@@ -33,25 +33,18 @@ class Bird extends Rectangle {
 
     Jump () {
         this.ySpeed = -450; 
-    }
+    } // 特有Jump (px)
 
     StartSwing() {
         if (this.timer) {
             return;
         }
-        this.timer = setInterval(() => {
-            this.SwingStatus++;
-            if (this.SwingStatus === 4) {
-                this.SwingStatus = 1;
-            }
-            this.render();
-        }, 200)
-        // this.timer = setInterval(()=> {
-           
-        //    this.SwingStatus = (this.SwingStatus) %3 + 1;
-        //    this.SwingStatus ++;
-        //    this.render();
-        // },200)
+        this.timer = setInterval(()=> {
+            this.SwingStatus ++;
+           this.SwingStatus = (this.SwingStatus) %3;
+           this.render(); // 重渲染
+         
+        },200)
        
     }
     render() {
@@ -66,7 +59,7 @@ class Bird extends Rectangle {
 
 }
 
-
+// 测试Bird class
 // const BirdMove = new Bird();
 // setInterval(()=> {
 //     BirdMove.move(16/1000);

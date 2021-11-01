@@ -47,16 +47,16 @@
     top: 100px;
 }
 
-.game .bird.swing1 {
+.game .bird.swing0 {
     background-position: -8px -10px;
 }
 
-.game .bird.swing2 {
+.game .bird.swing1 {
     background-position: -60px -10px;
 
 }
 
-.game .bird.swing3 {
+.game .bird.swing2 {
     background-position: -113px -10px;
 }
 

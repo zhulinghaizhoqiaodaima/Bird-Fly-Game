@@ -15,22 +15,13 @@ class Sky extends Rectangle {
         super.move(duration);
         if(this.onMove) {
             this.onMove();
-        }
+        } //判断是否重加载
     }
 
     onMove() {
         if(this.x <= -SkyWidth/2) {
             this.x = 0;
         }
-    }
+    } // 重渲染图片
     
 }
-
-// const skydmo = new Sky();
-// console.log(skydmo);
-
-// console.log(skydmo.move(1));
-
-// setInterval(()=>{
-//     skydmo.move(16/1000)
-// },16)

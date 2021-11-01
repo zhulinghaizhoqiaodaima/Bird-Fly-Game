@@ -29,7 +29,4 @@ class Land extends Rectangle {
 
 const landDmo = new Land(-100);
 
-
-// setInterval(()=>{
-//     landDmo.move(16/1000)
-// },16)
+//  Land 仿 Sky类
